@@ -5,10 +5,9 @@
 ## 项目结构
 
 ```
-kabaxi/
-├── .agents/
-│   └── skills/sigma/        # Sigma 辅导技能（已改造集成 wiki）
-└── llm-wiki-agent-clean/    # llm-wiki-agent 知识库（已扩展概念 schema）
+Sigma-Kabaxi/
+└── llm-wiki-agent-sigma/    # 知识库 + Sigma 技能（一体）
+    ├── .agents/skills/sigma/  # Sigma 辅导技能（已改造集成 wiki）
     ├── raw/                 # 存放学习资料（PDF、MD 等 20+ 格式）
     ├── wiki/                # 自动维护的知识库
     │   ├── index.md         # 目录（概念分 Teaching / Simple 两区）
@@ -36,9 +35,9 @@ llm-wiki-agent 的概念页通过 `concept_kind` 前置字段分为两种：
 
 ```bash
 # 1. 学习资料放入知识库
-cp 你的资料.pdf llm-wiki-agent-clean/raw/
+cp 你的资料.pdf llm-wiki-agent-sigma/raw/
 
-# 2. 在 llm-wiki-agent-clean 目录对代理说：
+# 2. 在 llm-wiki-agent-sigma 目录对代理说：
 #    "ingest raw/你的资料.pdf"
 #    → 自动生成概念库（教学概念含完整教案）
 
